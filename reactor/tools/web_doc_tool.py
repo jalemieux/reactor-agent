@@ -1,4 +1,4 @@
-from machina.tools.tool import Tool
+from reactor.tools.tool import Tool
 from bs4 import BeautifulSoup
 import requests
 import os

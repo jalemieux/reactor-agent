@@ -8,7 +8,7 @@ with tool integration for dynamic information gathering and action execution.
 from .agent import Agent, Reactor
 
 __version__ = "0.1.0"
-__author__ = "Your Name"
-__email__ = "your.email@example.com"
+__author__ = "Jac Lemieux"
+__email__ = "jalemieux@gmail.com"
 
 __all__ = ["Agent", "Reactor"]
