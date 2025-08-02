@@ -1,0 +1,343 @@
+[
+  {
+    "timestamp": "2025-08-02T16:17:17.667271",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:17.667333",
+    "trace_type": "thought",
+    "message": "thought: To address the user's question, I need to consider several factors: the criteria of \"cheap\" for Airbnb rentals, the requirement for a property with a pool, and the availability in various regions of France. Additionally, I should think about popular regions in France that might have such options and look for any current listings or general trends in pricing for monthly rentals. I will need to conduct a search to find this information and provide some regions or specific options. \n\nNext, I will proceed to search for cheap Airbnbs in France that include a pool for monthly stays. ",
+    "metadata": {
+      "thought": "To address the user's question, I need to consider several factors: the criteria of \"cheap\" for Airbnb rentals, the requirement for a property with a pool, and the availability in various regions of France. Additionally, I should think about popular regions in France that might have such options and look for any current listings or general trends in pricing for monthly rentals. I will need to conduct a search to find this information and provide some regions or specific options. \n\nNext, I will proceed to search for cheap Airbnbs in France that include a pool for monthly stays. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:18.649316",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:18.649391",
+    "trace_type": "action",
+    "message": "action: search_internet",
+    "metadata": {
+      "action_name": "search_internet"
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:18.649445",
+    "trace_type": "tool_execution",
+    "message": "Executing action 'search_internet' with arguments: {'query': 'cheap Airbnb rentals in France with pool for monthly stays'}",
+    "metadata": {
+      "action_name": "search_internet",
+      "action_args": {
+        "query": "cheap Airbnb rentals in France with pool for monthly stays"
+      }
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:20.387014",
+    "trace_type": "tool_result",
+    "message": "Result of action 'search_internet': {'query': 'cheap Airbnb rentals in France with pool for monthly stays', 'follow_up_questions': None, 'answer': None, 'images': [], 'results': [{'url': 'https://www.longtermrentalsinfrance.com/rentals/cheap.html', 'title': 'Cheap long term rentals in France', 'content': 'La Lavande loft apartment cheap long term rentals South France. Ref: 2001 ... Pool. Garden. Parking. Dishwasher. Washing Machine. WiFi. Balcony/Terrace.', 'score': 0.6994397, 'raw_content': None}, {'url': 'https://community.ricksteves.com/travel-forum/france/economical-rental-agencies-for-1-month-stay-in-paris', 'title': 'Economical Rental Agencies for 1 month stay in Paris', 'content': 'But they are not going to be dirt cheap. Be very careful with cheap apartments on AIRBNB etc as well. i am pretty sure we tangled with a', 'score': 0.41421208, 'raw_content': None}, {'url': 'https://www.longtermrentalsinfrance.com/living-in-france/long-term-rentals-france/long-term-house-rental-prices-in-france.html', 'title': 'Long term house rental prices in France 2024-2025', 'content': 'Renting in France. Cheap property to rent France \u00b7 12 month rentals in France \u00b7 Pet-friendly rentals France \u00b7 Large properties to rent France', 'score': 0.37903407, 'raw_content': None}, {'url': 'https://www.tripadvisor.com/ShowTopic-g187070-i12-k14964253-France_rent_a_vcation_home_for_2_months-France.html', 'title': 'rent a vcation home for 2 months - France Forum - Tripadvisor', 'content': 'and could say they were the forerunner of Airbnb as they operate on more or less the same principle, of unique properties, but cheaper.', 'score': 0.3434964, 'raw_content': None}, {'url': 'https://www.reddit.com/r/ParisTravelGuide/comments/17jb7wb/considering_a_68_week_stay_in_paris_are_airbnbs/', 'title': 'Considering a 6-8 week stay in Paris. Are airbnbs my only realistic ...', 'content': \"Airbnb is a petty hood option for a short let. My flat is on airbnb and with the options I offer you'd get a 10pc discount if you book a\", 'score': 0.13990116, 'raw_content': None}], 'response_time': 1.27}",
+    "metadata": {
+      "action_name": "search_internet",
+      "result": {
+        "query": "cheap Airbnb rentals in France with pool for monthly stays",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.longtermrentalsinfrance.com/rentals/cheap.html",
+            "title": "Cheap long term rentals in France",
+            "content": "La Lavande loft apartment cheap long term rentals South France. Ref: 2001 ... Pool. Garden. Parking. Dishwasher. Washing Machine. WiFi. Balcony/Terrace.",
+            "score": 0.6994397,
+            "raw_content": null
+          },
+          {
+            "url": "https://community.ricksteves.com/travel-forum/france/economical-rental-agencies-for-1-month-stay-in-paris",
+            "title": "Economical Rental Agencies for 1 month stay in Paris",
+            "content": "But they are not going to be dirt cheap. Be very careful with cheap apartments on AIRBNB etc as well. i am pretty sure we tangled with a",
+            "score": 0.41421208,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.longtermrentalsinfrance.com/living-in-france/long-term-rentals-france/long-term-house-rental-prices-in-france.html",
+            "title": "Long term house rental prices in France 2024-2025",
+            "content": "Renting in France. Cheap property to rent France \u00b7 12 month rentals in France \u00b7 Pet-friendly rentals France \u00b7 Large properties to rent France",
+            "score": 0.37903407,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.tripadvisor.com/ShowTopic-g187070-i12-k14964253-France_rent_a_vcation_home_for_2_months-France.html",
+            "title": "rent a vcation home for 2 months - France Forum - Tripadvisor",
+            "content": "and could say they were the forerunner of Airbnb as they operate on more or less the same principle, of unique properties, but cheaper.",
+            "score": 0.3434964,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.reddit.com/r/ParisTravelGuide/comments/17jb7wb/considering_a_68_week_stay_in_paris_are_airbnbs/",
+            "title": "Considering a 6-8 week stay in Paris. Are airbnbs my only realistic ...",
+            "content": "Airbnb is a petty hood option for a short let. My flat is on airbnb and with the options I offer you'd get a 10pc discount if you book a",
+            "score": 0.13990116,
+            "raw_content": null
+          }
+        ],
+        "response_time": 1.27
+      },
+      "result_length": 6
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:24.092858",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:24.092948",
+    "trace_type": "observation",
+    "message": "observation: The search results provided some information about long-term rentals in France, but they did not directly give specific cheap Airbnb listings with pools for monthly stays. There are references to sites that discuss long-term rentals and economic considerations, but they lack detailed listings or specific properties.\n\nThe first result talks about cheap long-term rentals in South France, mentioning a loft apartment with a pool and necessary amenities, which might be a lead worth checking further. However, most results either discuss rental prices or caution against cheap options without specificity.\n\nNext, I should explore the first link further to find more detailed listings or information on properties that align with the user\u2019s request for cheap Airbnb rentals with pools in France for monthly stays.  I will retrieve the content from that link. ",
+    "metadata": {
+      "observation": "The search results provided some information about long-term rentals in France, but they did not directly give specific cheap Airbnb listings with pools for monthly stays. There are references to sites that discuss long-term rentals and economic considerations, but they lack detailed listings or specific properties.\n\nThe first result talks about cheap long-term rentals in South France, mentioning a loft apartment with a pool and necessary amenities, which might be a lead worth checking further. However, most results either discuss rental prices or caution against cheap options without specificity.\n\nNext, I should explore the first link further to find more detailed listings or information on properties that align with the user\u2019s request for cheap Airbnb rentals with pools in France for monthly stays.  I will retrieve the content from that link. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:26.602190",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:26.602342",
+    "trace_type": "thought",
+    "message": "thought: Given that the first link mentioned specific rentals, including a loft apartment with a pool in South France, it seems promising. This could provide valuable information about affordable options for monthly Airbnb stays. My next action will be to access the content of this link to gather specific details about the offerings, including prices, availability, and features of the rentals. This will help me provide a more comprehensive answer to the user's question. ",
+    "metadata": {
+      "thought": "Given that the first link mentioned specific rentals, including a loft apartment with a pool in South France, it seems promising. This could provide valuable information about affordable options for monthly Airbnb stays. My next action will be to access the content of this link to gather specific details about the offerings, including prices, availability, and features of the rentals. This will help me provide a more comprehensive answer to the user's question. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:27.781760",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:27.781899",
+    "trace_type": "action",
+    "message": "action: get_url_content",
+    "metadata": {
+      "action_name": "get_url_content"
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:27.781954",
+    "trace_type": "tool_execution",
+    "message": "Executing action 'get_url_content' with arguments: {'url': 'https://www.longtermrentalsinfrance.com/rentals/cheap.html'}",
+    "metadata": {
+      "action_name": "get_url_content",
+      "action_args": {
+        "url": "https://www.longtermrentalsinfrance.com/rentals/cheap.html"
+      }
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:29.651092",
+    "trace_type": "tool_result",
+    "message": "Result of action 'get_url_content': {'results': [{'url': 'https://www.longtermrentalsinfrance.com/rentals/cheap.html', 'raw_content': '![](/templates/yootheme/cache/logo_house-sm-b130cc52.webp)\\n\\n[Login](/component/users/registration.html?Itemid=2174)  [My Bookings](/component/jomholiday/?view=user_dashboard)\\n\\n![](/templates/yootheme/cache/logo_house-39f3d632.webp)\\n![](/templates/yootheme/cache/logo_house-inv300-375caaa4.webp)\\n\\n#### Filters Applied:\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=801f25&dir=nr&src=14085-IMG_20250719_150354_00_merged.jpg)\\n\\n### [Usclas d\\'Herault studio apartment for long term rent South France](/rentals/cheap/usclas-d-herault-studio-apartment-for-long-term-rent-south-france.html \"Usclas d\\'Herault studio apartment for long term rent South France\") Ref: 2287 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=124eb2&dir=tt&src=9107-carcassonne-restaurants-france.jpg)\\n\\n### [Apartment Antoinette - 2 bed apartment for rent in Carcassonne, South France](/rentals/cheap/antoinette-2-bed-apartment-for-rent-carcassonne-france.html \"Apartment Antoinette - 2 bed apartment for rent in Carcassonne, South France\") Ref: 2153 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=7d13a0&dir=cj&src=13340-cheap-long-term-rentals-pyrenees-france-a1.jpg)\\n\\n### [Corneilla-de-Conflent cheap long term rentals Pyrenees South France](/rentals/cheap/corneilla-2-bed-house-for-long-term-rentals-pyrenees-south-france.html \"Corneilla-de-Conflent cheap long term rentals Pyrenees South France\") Ref: 2266 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=6000dd&dir=qq&src=6634-cheap-languedoc-apartment-rental-france-a8.jpg)\\n\\n### [Syrah 1 bed apartment rental Pouzolles Languedoc France](/rentals/cheap/syrah-1-bed-apartment-rental-pouzolles-languedoc-france.html \"Syrah 1 bed apartment rental Pouzolles Languedoc France\") Ref: 2094 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=1abd7f&dir=cu&src=13313-cheap-long-term-rentals-france-a1.jpg)\\n\\n### [La Petite Bastide cheap long term rentals property France](/rentals/cheap/la-petite-bastide-cheap-long-term-rentals-property-france.html \"La Petite Bastide cheap long term rentals property France\") Ref: 2265 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=b274f4&dir=av&src=5372-cheap-property-long-term-rental-france-a1.jpg)\\n\\n### [Roujan cheap property to rent long term France](/rentals/cheap/roujan-cheap-property-to-rent-long-term-france.html \"Roujan cheap property to rent long term France\") Ref: 2052 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=bf557d&dir=ar&src=12850-apartment-rental-beziers-france-a4.jpg)\\n\\n### [Apartment Fayet - cheap long term rental Beziers South France](/rentals/cheap/apartment-fayet-cheap-long-term-rental-beziers-south-france.html \"Apartment Fayet - cheap long term rental Beziers South France\") Ref: 2251 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=2feab4&dir=ct&src=11686-apartment-long-tentals-south-france-1aa.jpg)\\n\\n### [L\\'Agasse - 1 bed apartment long term rentals in South France](/rentals/cheap/l-agasse-1-bed-apartment-long-term-rentals-in-south-france.html \"L\\'Agasse - 1 bed apartment long term rentals in South France\") Ref: 1983 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=78a664&dir=aq&src=12834-cheap-long-term-rental-beziers-france-a2.jpg)\\n\\n### [Art Lovers apartment for long term rent Beziers South France](/rentals/cheap/art-lovers-apartment-for-long-term-rent-beziers-south-france.html \"Art Lovers apartment for long term rent Beziers South France\") Ref: 2250 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ea99fc&dir=kx&src=12721-IMG_20250113_133640_00_merged.jpg)\\n\\n### [Historic centre Beziers studio apartment for long term rent France](/rentals/cheap/historic-centre-beziers-studio-apartment-for-long-term-rent-france.html \"Historic centre Beziers studio apartment for long term rent France\") Ref: 2245 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=c21df5&dir=vq&src=3633-x-magalas-vineyards.jpg)\\n\\n### [Maison de la P\u00eache 1 bed apartment rentals South France](/rentals/cheap/maison-de-la-peche-1-bed-apartment-rentals-south-france.html \"Maison de la P\u00eache 1 bed apartment rentals South France\") Ref: 1942 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=c2091a&dir=nf&src=12289-house-for-rent-france-a1.jpg)\\n\\n### [Montr\u00e9al house for rent long term near Carcassonne Aude France](/rentals/cheap/montreal-house-for-rent-long-term-near-carcassonne-aude-france.html \"Montr\u00e9al house for rent long term near Carcassonne Aude France\") Ref: 2231 Sleeps: 3 Bedrooms: 2 Bathrooms: 2\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=9cc5aa&dir=dq&src=10140-farmhouse-cottage-loire-valley-france-a1dd.jpg)\\n\\n### [Le Tuffeau long term cottage rentals Loire Valley France](/rentals/cheap/le-tuffeau-long-term-cottage-rentals-loire-valley-france.html \"Le Tuffeau long term cottage rentals Loire Valley France\") Ref: 1937 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=b09656&dir=pq&src=12201-provence-apartment-long-term-rent-a9.jpg)\\n\\n### [Hibiscus apartment for long term rentals Provence France](/rentals/cheap/hibiscus-apartment-for-long-term-rentals-provence-france.html \"Hibiscus apartment for long term rentals Provence France\") Ref: 2228 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ba4aad&dir=br&src=11528-tarn-long-term-rental-france-a1.jpg)\\n\\n### [Les Figuiers 1 bed property for long term rentals in Tarn France](/rentals/cheap/les-figuiers-1-bed-property-for-long-term-rentals-in-tarn-france.html \"Les Figuiers 1 bed property for long term rentals in Tarn France\") Ref: 2210 Sleeps: 4 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=814acc&dir=br&src=2466-dordogne-cottage-long-term-rentals-a1.jpg)\\n\\n### [Le Texier cottage Dordogne France for long term rentals](/rentals/cheap/le-texier-cottage-dordogne-france-for-long-term-rentals.html \"Le Texier cottage Dordogne France for long term rentals\") Ref: 1874 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=0eb7f3&dir=vo&src=9086-house-for-rent-lot-france.jpg)\\n\\n### [Montpezat-de-Quercy 2 bed house for rent Tarn et Garonne France](/rentals/cheap/montpezat-de-quercy-2-bed-house-for-rent-france.html \"Montpezat-de-Quercy 2 bed house for rent Tarn et Garonne France\") Ref: 2154 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=8b87a0&dir=xu&src=8536-cheap-apartment-beziers-south-france-a1.jpg)\\n\\n### [Cathedral apartment Beziers South France cheap rental](/rentals/cheap/cathedral-apartment-beziers-south-france-cheap-rental.html \"Cathedral apartment Beziers South France cheap rental\") Ref: 2135 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=7e0a13&dir=bw&src=8491-apartment-rent-beziers-france-a3.jpg)\\n\\n### [Chez Veronique - studio apartment to rent in Beziers France](/rentals/cheap/chez-veronique-studio-apartment-to-rent-in-beziers-france.html \"Chez Veronique - studio apartment to rent in Beziers France\") Ref: 2136 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=a6c222&dir=iv&src=7244-cottage-long-term-rent-south-france-a4.jpg)\\n\\n### [Rue du Porche cosy cottage to rent long term South France](/rentals/cheap/rue-du-porche-cosy-cottage-to-rent-long-term-south-france.html \"Rue du Porche cosy cottage to rent long term South France\") Ref: 2114 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=920321&dir=gn&src=6532-long-term-rentals-france-a1.jpg)\\n\\n### [La Forte - cheap 2 bed long term rentals property South France](/rentals/cheap/la-forte-cheap-2-bed-long-term-rentals-property-south-france.html \"La Forte - cheap 2 bed long term rentals property South France\") Ref: 2090 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=789ac6&dir=iv&src=4122-rural-long-term-rentals-france-a1.jpg)\\n\\n### [La Perdrix rural cottage for long term rentals France](/rentals/cheap/la-perdrix-rural-cottage-for-long-term-rentals-france.html \"La Perdrix rural cottage for long term rentals France\") Ref: 2008 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=2e856b&dir=uq&src=4097-vienne-long-term-rentals-france-a1a.jpg)\\n\\n### [Le Poirier cottage long term rentals Vienne France](/rentals/cheap/le-poirier-cottage-long-term-rentals-vienne-france.html \"Le Poirier cottage long term rentals Vienne France\") Ref: 2007 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=cf87cb&dir=fj&src=8099-apartment-rentals-south-france-a1bf.jpg)\\n\\n### [Les Tournesols 1 bed apartment rental St Chinian South France](/rentals/cheap/les-tournesols-1-bed-apartment-rental-st-chinian-south-france.html \"Les Tournesols 1 bed apartment rental St Chinian South France\") Ref: 2002 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=4b0375&dir=ty&src=5848-cheap-apartment-rentals-south-france-a1bb.jpg)\\n\\n### [La Lavande loft apartment cheap long term rentals South France](/rentals/cheap/la-lavande-loft-apartment-cheap-long-term-rentals-south-france.html \"La Lavande loft apartment cheap long term rentals South France\") Ref: 2001 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=810203&dir=dl&src=3666-magalas-cheap-apartment-rent-france-a1.jpg)\\n\\n### [Le Loft cheap 2 bed apartment for long term rentals France](/rentals/cheap/la-peche-cheap-2-bed-apartment-for-long-term-rentals-france.html \"Le Loft cheap 2 bed apartment for long term rentals France\") Ref: 1962 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ab208f&dir=bw&src=7842-cheap-apartment-rent-france-a1bb.jpg)\\n\\n### [The Retreat - cheap apartment for long term rentals in South France](/rentals/cheap/apartment-de-peche-cheap-long-term-rentals-in-south-france.html \"The Retreat - cheap apartment for long term rentals in South France\") Ref: 1941 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=95f4c6&dir=pj&src=5584-cheap-apartment-for-rent-france-a1aa.jpg)\\n\\n### [La P\u00eache cheap studio apartment to rent South France](/rentals/cheap/la-peche-cheap-studio-apartment-to-rent-south-france.html \"La P\u00eache cheap studio apartment to rent South France\") Ref: 1940 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=12bc94&dir=il&src=3012-house-long-term-rentals-france-a1.jpg)\\n\\n### [Mediterranean house for long term rentals South France](/rentals/cheap/mediterranean-house-for-long-term-rentals-south-france.html \"Mediterranean house for long term rentals South France\") Ref: 1949 Sleeps: 2 Bedrooms: 2 Bathrooms: 1\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=58f833&dir=rv&src=1909-x-belarga5.jpg)\\n\\n### [Cheap long term rentals house in Belarga Southern France](/rentals/cheap/cheap-long-term-rentals-house-in-belarga-southern-france.html \"Cheap long term rentals house in Belarga Southern France\") Ref: 1776 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\\n\\n### Search Accommodation\\n\\n### Rent a place in France\\n\\n**[COTE D\\'AZUR RENTALS](/cote-d-azur.html)**\\n\\n**[PROVENCE RENTALS](/provence.html)**\\n\\n**[DORDOGNE, CHARENTE & MIDI-PYRENEES](/dordogne-charente-midi-pyrenees.html)**\\n\\n**[LOIRE VALLEY](/loire-valley.html)**\\n\\n**[CENTRAL FRANCE](/central-france.html)**\\n\\n**[NORTHERN FRANCE](/northern-france.html)**\\n\\n**[ALPS/SKI RESORTS](/alps-ski-resorts.html)**\\n\\n**[CORSICA RENTALS](/corsica.html)**\\n\\n**[LANGUEDOC RENTALS](/languedoc.html)**\\n\\n### Popular long term rentals\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=5cea9e&dir=mz&src=14119-cottage-long-term-rentals-france-a1.jpg)\\n\\n### [Limousin 2 bed cottage with garden for long term rentals France](/rentals/pet-friendly/limousin-2-bed-cottage-with-garden-for-long-term-rentals-france.html \"Limousin 2 bed cottage with garden for long term rentals France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=d7309d&dir=kj&src=6962-property-rental-france-a2cc.jpg)\\n\\n### [Villa Maia luxury 4 bed property rental South France](/rentals/chateaux-large/villa-maia-luxury-4-bed-property-rental-south-france.html \"Villa Maia luxury 4 bed property rental South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=cd5cad&dir=km&src=9309-villa-long-term-rentals-cote-azur-a1bb.jpg)\\n\\n### [Villa Chesnaye 5 bed property for long term rentals Cote d\\'Azur](/rentals/chateaux-large/villa-chesnaye-5-bed-property-for-long-term-rentals-cote-d-azur.html \"Villa Chesnaye 5 bed property for long term rentals Cote d\\'Azur\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=9c9b8d&dir=nr&src=14085-IMG_20250719_150354_00_merged.jpg)\\n\\n### [Usclas d\\'Herault studio apartment for long term rent South France](/rentals/cheap/usclas-d-herault-studio-apartment-for-long-term-rent-south-france.html \"Usclas d\\'Herault studio apartment for long term rent South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7e0995&dir=by&src=14056-country-house-for-rent-france-a1.jpg)\\n\\n### [La Forge 3 bed country house for rent in South France](/languedoc/carcassonne/la-forge-3-bed-country-house-for-rent-in-south-france.html \"La Forge 3 bed country house for rent in South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7c2f20&dir=fp&src=13971-argeles-plage.jpg)\\n\\n### [Argeles 2 bed beach house for long term rent South France](/rentals/beach-houses/argeles-2-bed-beach-house-for-long-term-rent-south-france.html \"Argeles 2 bed beach house for long term rent South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=1728b4&dir=vy&src=13886-house-for-long-term-rent-france-a2.jpg)\\n\\n### [Capestang 3 bed townhouse to rent long term South France](/rentals/annual/capestang-3-bed-townhouse-to-rent-long-term-south-france.html \"Capestang 3 bed townhouse to rent long term South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7e8e19&dir=is&src=13864-house-to-rent-france-a1.jpg)\\n\\n### [Maison Verte 3 bed house to rent long term near Mediterranean coast](/rentals/maison-verte-3-bed-house-to-rent-long-term-near-mediterranean-coast.html \"Maison Verte 3 bed house to rent long term near Mediterranean coast\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=0336ef&dir=cj&src=13340-cheap-long-term-rentals-pyrenees-france-a1.jpg)\\n\\n### [Corneilla-de-Conflent cheap long term rentals Pyrenees South France](/rentals/cheap/corneilla-2-bed-house-for-long-term-rentals-pyrenees-south-france.html \"Corneilla-de-Conflent cheap long term rentals Pyrenees South France\")\\n\\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=f2f820&dir=fk&src=13593-house-for-rent-pyrenees-france-a1.jpg)\\n\\n### [Los Masos large house for long term rent Pyrenees France](/rentals/annual/los-masos-large-house-for-long-term-rent-pyrenees-france.html \"Los Masos large house for long term rent Pyrenees France\")\\n\\n# Live the\\xa0dream and move to France\\n\\n![Long term rentals Provence]()\\n\\n### Provence long term rentals\\n\\n**Rent a long term property in Provence, France**\\n\\n![Long term rentals Languedoc]()\\n\\n### Languedoc long term rentals\\n\\n**Discover our long term rental properties in the Languedoc**\\n\\n![Long term rentals Cote d\\'Azur]()\\n\\n### Cote d\\'Azur rentals\\n\\n**Find long term rental properties in St Tropez, Cannes & Nice**\\n\\n![cheap property to rent france]()\\n\\n### Cheap property to rent in France\\n\\n**Search for cheap property to rent in France**\\n\\n![pet friendly long term rentals france]()\\n\\n### Pet-friendly rentals France\\n\\n**Find pet-friendly long term rentals in France**\\n\\n![Beach long term rentals]()\\n\\n### Beach houses to rent long term\\n\\n**Find long term rentals near the beach in France**\\n\\n![Long term rentals in France]()\\n\\n**Long Term Rentals in France**\\xa0provides the largest selection of long term lets across the South of France, Dordogne and Northern France.\\xa0Our properties are all personally inspected and available for rentals of between 3 to 12 months.\\n\\n#### About us\\n\\nMeet the team\\n\\nBooking terms\\n\\nPrivacy Policy\\n\\nAdvertise with us\\n\\n#### Renting in\\xa0France\\n\\nCheap property to rent France\\n\\n12 month rentals in France\\n\\nPet-friendly rentals France\\n\\nLarge properties to rent France\\n\\n#### Contact us\\n\\n**Long Term Rentals in France**  \\n68bis Avenue de Pezenas  \\n34320, Roujan,\\xa0France.  \\nTel: [+33 6 51 68 93 26](tel:+33+6+95+50+19+21)  \\nEmail: [Long Term Rentals](/contact.html)', 'images': []}], 'failed_results': [], 'response_time': 1.34}",
+    "metadata": {
+      "action_name": "get_url_content",
+      "result": {
+        "results": [
+          {
+            "url": "https://www.longtermrentalsinfrance.com/rentals/cheap.html",
+            "raw_content": "![](/templates/yootheme/cache/logo_house-sm-b130cc52.webp)\n\n[Login](/component/users/registration.html?Itemid=2174)  [My Bookings](/component/jomholiday/?view=user_dashboard)\n\n![](/templates/yootheme/cache/logo_house-39f3d632.webp)\n![](/templates/yootheme/cache/logo_house-inv300-375caaa4.webp)\n\n#### Filters Applied:\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=801f25&dir=nr&src=14085-IMG_20250719_150354_00_merged.jpg)\n\n### [Usclas d'Herault studio apartment for long term rent South France](/rentals/cheap/usclas-d-herault-studio-apartment-for-long-term-rent-south-france.html \"Usclas d'Herault studio apartment for long term rent South France\") Ref: 2287 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=124eb2&dir=tt&src=9107-carcassonne-restaurants-france.jpg)\n\n### [Apartment Antoinette - 2 bed apartment for rent in Carcassonne, South France](/rentals/cheap/antoinette-2-bed-apartment-for-rent-carcassonne-france.html \"Apartment Antoinette - 2 bed apartment for rent in Carcassonne, South France\") Ref: 2153 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=7d13a0&dir=cj&src=13340-cheap-long-term-rentals-pyrenees-france-a1.jpg)\n\n### [Corneilla-de-Conflent cheap long term rentals Pyrenees South France](/rentals/cheap/corneilla-2-bed-house-for-long-term-rentals-pyrenees-south-france.html \"Corneilla-de-Conflent cheap long term rentals Pyrenees South France\") Ref: 2266 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=6000dd&dir=qq&src=6634-cheap-languedoc-apartment-rental-france-a8.jpg)\n\n### [Syrah 1 bed apartment rental Pouzolles Languedoc France](/rentals/cheap/syrah-1-bed-apartment-rental-pouzolles-languedoc-france.html \"Syrah 1 bed apartment rental Pouzolles Languedoc France\") Ref: 2094 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=1abd7f&dir=cu&src=13313-cheap-long-term-rentals-france-a1.jpg)\n\n### [La Petite Bastide cheap long term rentals property France](/rentals/cheap/la-petite-bastide-cheap-long-term-rentals-property-france.html \"La Petite Bastide cheap long term rentals property France\") Ref: 2265 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=b274f4&dir=av&src=5372-cheap-property-long-term-rental-france-a1.jpg)\n\n### [Roujan cheap property to rent long term France](/rentals/cheap/roujan-cheap-property-to-rent-long-term-france.html \"Roujan cheap property to rent long term France\") Ref: 2052 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=bf557d&dir=ar&src=12850-apartment-rental-beziers-france-a4.jpg)\n\n### [Apartment Fayet - cheap long term rental Beziers South France](/rentals/cheap/apartment-fayet-cheap-long-term-rental-beziers-south-france.html \"Apartment Fayet - cheap long term rental Beziers South France\") Ref: 2251 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=2feab4&dir=ct&src=11686-apartment-long-tentals-south-france-1aa.jpg)\n\n### [L'Agasse - 1 bed apartment long term rentals in South France](/rentals/cheap/l-agasse-1-bed-apartment-long-term-rentals-in-south-france.html \"L'Agasse - 1 bed apartment long term rentals in South France\") Ref: 1983 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=78a664&dir=aq&src=12834-cheap-long-term-rental-beziers-france-a2.jpg)\n\n### [Art Lovers apartment for long term rent Beziers South France](/rentals/cheap/art-lovers-apartment-for-long-term-rent-beziers-south-france.html \"Art Lovers apartment for long term rent Beziers South France\") Ref: 2250 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ea99fc&dir=kx&src=12721-IMG_20250113_133640_00_merged.jpg)\n\n### [Historic centre Beziers studio apartment for long term rent France](/rentals/cheap/historic-centre-beziers-studio-apartment-for-long-term-rent-france.html \"Historic centre Beziers studio apartment for long term rent France\") Ref: 2245 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=c21df5&dir=vq&src=3633-x-magalas-vineyards.jpg)\n\n### [Maison de la P\u00eache 1 bed apartment rentals South France](/rentals/cheap/maison-de-la-peche-1-bed-apartment-rentals-south-france.html \"Maison de la P\u00eache 1 bed apartment rentals South France\") Ref: 1942 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=c2091a&dir=nf&src=12289-house-for-rent-france-a1.jpg)\n\n### [Montr\u00e9al house for rent long term near Carcassonne Aude France](/rentals/cheap/montreal-house-for-rent-long-term-near-carcassonne-aude-france.html \"Montr\u00e9al house for rent long term near Carcassonne Aude France\") Ref: 2231 Sleeps: 3 Bedrooms: 2 Bathrooms: 2\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=9cc5aa&dir=dq&src=10140-farmhouse-cottage-loire-valley-france-a1dd.jpg)\n\n### [Le Tuffeau long term cottage rentals Loire Valley France](/rentals/cheap/le-tuffeau-long-term-cottage-rentals-loire-valley-france.html \"Le Tuffeau long term cottage rentals Loire Valley France\") Ref: 1937 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=b09656&dir=pq&src=12201-provence-apartment-long-term-rent-a9.jpg)\n\n### [Hibiscus apartment for long term rentals Provence France](/rentals/cheap/hibiscus-apartment-for-long-term-rentals-provence-france.html \"Hibiscus apartment for long term rentals Provence France\") Ref: 2228 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ba4aad&dir=br&src=11528-tarn-long-term-rental-france-a1.jpg)\n\n### [Les Figuiers 1 bed property for long term rentals in Tarn France](/rentals/cheap/les-figuiers-1-bed-property-for-long-term-rentals-in-tarn-france.html \"Les Figuiers 1 bed property for long term rentals in Tarn France\") Ref: 2210 Sleeps: 4 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=814acc&dir=br&src=2466-dordogne-cottage-long-term-rentals-a1.jpg)\n\n### [Le Texier cottage Dordogne France for long term rentals](/rentals/cheap/le-texier-cottage-dordogne-france-for-long-term-rentals.html \"Le Texier cottage Dordogne France for long term rentals\") Ref: 1874 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=0eb7f3&dir=vo&src=9086-house-for-rent-lot-france.jpg)\n\n### [Montpezat-de-Quercy 2 bed house for rent Tarn et Garonne France](/rentals/cheap/montpezat-de-quercy-2-bed-house-for-rent-france.html \"Montpezat-de-Quercy 2 bed house for rent Tarn et Garonne France\") Ref: 2154 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=8b87a0&dir=xu&src=8536-cheap-apartment-beziers-south-france-a1.jpg)\n\n### [Cathedral apartment Beziers South France cheap rental](/rentals/cheap/cathedral-apartment-beziers-south-france-cheap-rental.html \"Cathedral apartment Beziers South France cheap rental\") Ref: 2135 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=7e0a13&dir=bw&src=8491-apartment-rent-beziers-france-a3.jpg)\n\n### [Chez Veronique - studio apartment to rent in Beziers France](/rentals/cheap/chez-veronique-studio-apartment-to-rent-in-beziers-france.html \"Chez Veronique - studio apartment to rent in Beziers France\") Ref: 2136 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=a6c222&dir=iv&src=7244-cottage-long-term-rent-south-france-a4.jpg)\n\n### [Rue du Porche cosy cottage to rent long term South France](/rentals/cheap/rue-du-porche-cosy-cottage-to-rent-long-term-south-france.html \"Rue du Porche cosy cottage to rent long term South France\") Ref: 2114 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=920321&dir=gn&src=6532-long-term-rentals-france-a1.jpg)\n\n### [La Forte - cheap 2 bed long term rentals property South France](/rentals/cheap/la-forte-cheap-2-bed-long-term-rentals-property-south-france.html \"La Forte - cheap 2 bed long term rentals property South France\") Ref: 2090 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=789ac6&dir=iv&src=4122-rural-long-term-rentals-france-a1.jpg)\n\n### [La Perdrix rural cottage for long term rentals France](/rentals/cheap/la-perdrix-rural-cottage-for-long-term-rentals-france.html \"La Perdrix rural cottage for long term rentals France\") Ref: 2008 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=2e856b&dir=uq&src=4097-vienne-long-term-rentals-france-a1a.jpg)\n\n### [Le Poirier cottage long term rentals Vienne France](/rentals/cheap/le-poirier-cottage-long-term-rentals-vienne-france.html \"Le Poirier cottage long term rentals Vienne France\") Ref: 2007 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=cf87cb&dir=fj&src=8099-apartment-rentals-south-france-a1bf.jpg)\n\n### [Les Tournesols 1 bed apartment rental St Chinian South France](/rentals/cheap/les-tournesols-1-bed-apartment-rental-st-chinian-south-france.html \"Les Tournesols 1 bed apartment rental St Chinian South France\") Ref: 2002 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=4b0375&dir=ty&src=5848-cheap-apartment-rentals-south-france-a1bb.jpg)\n\n### [La Lavande loft apartment cheap long term rentals South France](/rentals/cheap/la-lavande-loft-apartment-cheap-long-term-rentals-south-france.html \"La Lavande loft apartment cheap long term rentals South France\") Ref: 2001 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=810203&dir=dl&src=3666-magalas-cheap-apartment-rent-france-a1.jpg)\n\n### [Le Loft cheap 2 bed apartment for long term rentals France](/rentals/cheap/la-peche-cheap-2-bed-apartment-for-long-term-rentals-france.html \"Le Loft cheap 2 bed apartment for long term rentals France\") Ref: 1962 Sleeps: 4 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=ab208f&dir=bw&src=7842-cheap-apartment-rent-france-a1bb.jpg)\n\n### [The Retreat - cheap apartment for long term rentals in South France](/rentals/cheap/apartment-de-peche-cheap-long-term-rentals-in-south-france.html \"The Retreat - cheap apartment for long term rentals in South France\") Ref: 1941 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=95f4c6&dir=pj&src=5584-cheap-apartment-for-rent-france-a1aa.jpg)\n\n### [La P\u00eache cheap studio apartment to rent South France](/rentals/cheap/la-peche-cheap-studio-apartment-to-rent-south-france.html \"La P\u00eache cheap studio apartment to rent South France\") Ref: 1940 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=12bc94&dir=il&src=3012-house-long-term-rentals-france-a1.jpg)\n\n### [Mediterranean house for long term rentals South France](/rentals/cheap/mediterranean-house-for-long-term-rentals-south-france.html \"Mediterranean house for long term rentals South France\") Ref: 1949 Sleeps: 2 Bedrooms: 2 Bathrooms: 1\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz02NDYmYWM9MTYvOQ==&hash=58f833&dir=rv&src=1909-x-belarga5.jpg)\n\n### [Cheap long term rentals house in Belarga Southern France](/rentals/cheap/cheap-long-term-rentals-house-in-belarga-southern-france.html \"Cheap long term rentals house in Belarga Southern France\") Ref: 1776 Sleeps: 2 Bedrooms: 1 Bathrooms: 1\n\n### Search Accommodation\n\n### Rent a place in France\n\n**[COTE D'AZUR RENTALS](/cote-d-azur.html)**\n\n**[PROVENCE RENTALS](/provence.html)**\n\n**[DORDOGNE, CHARENTE & MIDI-PYRENEES](/dordogne-charente-midi-pyrenees.html)**\n\n**[LOIRE VALLEY](/loire-valley.html)**\n\n**[CENTRAL FRANCE](/central-france.html)**\n\n**[NORTHERN FRANCE](/northern-france.html)**\n\n**[ALPS/SKI RESORTS](/alps-ski-resorts.html)**\n\n**[CORSICA RENTALS](/corsica.html)**\n\n**[LANGUEDOC RENTALS](/languedoc.html)**\n\n### Popular long term rentals\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=5cea9e&dir=mz&src=14119-cottage-long-term-rentals-france-a1.jpg)\n\n### [Limousin 2 bed cottage with garden for long term rentals France](/rentals/pet-friendly/limousin-2-bed-cottage-with-garden-for-long-term-rentals-france.html \"Limousin 2 bed cottage with garden for long term rentals France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=d7309d&dir=kj&src=6962-property-rental-france-a2cc.jpg)\n\n### [Villa Maia luxury 4 bed property rental South France](/rentals/chateaux-large/villa-maia-luxury-4-bed-property-rental-south-france.html \"Villa Maia luxury 4 bed property rental South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=cd5cad&dir=km&src=9309-villa-long-term-rentals-cote-azur-a1bb.jpg)\n\n### [Villa Chesnaye 5 bed property for long term rentals Cote d'Azur](/rentals/chateaux-large/villa-chesnaye-5-bed-property-for-long-term-rentals-cote-d-azur.html \"Villa Chesnaye 5 bed property for long term rentals Cote d'Azur\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=9c9b8d&dir=nr&src=14085-IMG_20250719_150354_00_merged.jpg)\n\n### [Usclas d'Herault studio apartment for long term rent South France](/rentals/cheap/usclas-d-herault-studio-apartment-for-long-term-rent-south-france.html \"Usclas d'Herault studio apartment for long term rent South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7e0995&dir=by&src=14056-country-house-for-rent-france-a1.jpg)\n\n### [La Forge 3 bed country house for rent in South France](/languedoc/carcassonne/la-forge-3-bed-country-house-for-rent-in-south-france.html \"La Forge 3 bed country house for rent in South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7c2f20&dir=fp&src=13971-argeles-plage.jpg)\n\n### [Argeles 2 bed beach house for long term rent South France](/rentals/beach-houses/argeles-2-bed-beach-house-for-long-term-rent-south-france.html \"Argeles 2 bed beach house for long term rent South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=1728b4&dir=vy&src=13886-house-for-long-term-rent-france-a2.jpg)\n\n### [Capestang 3 bed townhouse to rent long term South France](/rentals/annual/capestang-3-bed-townhouse-to-rent-long-term-south-france.html \"Capestang 3 bed townhouse to rent long term South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=7e8e19&dir=is&src=13864-house-to-rent-france-a1.jpg)\n\n### [Maison Verte 3 bed house to rent long term near Mediterranean coast](/rentals/maison-verte-3-bed-house-to-rent-long-term-near-mediterranean-coast.html \"Maison Verte 3 bed house to rent long term near Mediterranean coast\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=0336ef&dir=cj&src=13340-cheap-long-term-rentals-pyrenees-france-a1.jpg)\n\n### [Corneilla-de-Conflent cheap long term rentals Pyrenees South France](/rentals/cheap/corneilla-2-bed-house-for-long-term-rentals-pyrenees-south-france.html \"Corneilla-de-Conflent cheap long term rentals Pyrenees South France\")\n\n![img](https://www.longtermrentalsinfrance.com/index.php?option=com_jomcomdev&format=raw&task=ajax.image&pr=dz0zMzQmYWM9MTYvOQ==&hash=f2f820&dir=fk&src=13593-house-for-rent-pyrenees-france-a1.jpg)\n\n### [Los Masos large house for long term rent Pyrenees France](/rentals/annual/los-masos-large-house-for-long-term-rent-pyrenees-france.html \"Los Masos large house for long term rent Pyrenees France\")\n\n# Live the\u00a0dream and move to France\n\n![Long term rentals Provence]()\n\n### Provence long term rentals\n\n**Rent a long term property in Provence, France**\n\n![Long term rentals Languedoc]()\n\n### Languedoc long term rentals\n\n**Discover our long term rental properties in the Languedoc**\n\n![Long term rentals Cote d'Azur]()\n\n### Cote d'Azur rentals\n\n**Find long term rental properties in St Tropez, Cannes & Nice**\n\n![cheap property to rent france]()\n\n### Cheap property to rent in France\n\n**Search for cheap property to rent in France**\n\n![pet friendly long term rentals france]()\n\n### Pet-friendly rentals France\n\n**Find pet-friendly long term rentals in France**\n\n![Beach long term rentals]()\n\n### Beach houses to rent long term\n\n**Find long term rentals near the beach in France**\n\n![Long term rentals in France]()\n\n**Long Term Rentals in France**\u00a0provides the largest selection of long term lets across the South of France, Dordogne and Northern France.\u00a0Our properties are all personally inspected and available for rentals of between 3 to 12 months.\n\n#### About us\n\nMeet the team\n\nBooking terms\n\nPrivacy Policy\n\nAdvertise with us\n\n#### Renting in\u00a0France\n\nCheap property to rent France\n\n12 month rentals in France\n\nPet-friendly rentals France\n\nLarge properties to rent France\n\n#### Contact us\n\n**Long Term Rentals in France**  \n68bis Avenue de Pezenas  \n34320, Roujan,\u00a0France.  \nTel: [+33 6 51 68 93 26](tel:+33+6+95+50+19+21)  \nEmail: [Long Term Rentals](/contact.html)",
+            "images": []
+          }
+        ],
+        "failed_results": [],
+        "response_time": 1.34
+      },
+      "result_length": 3
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:33.502946",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:33.503057",
+    "trace_type": "observation",
+    "message": "observation: The content retrieved from the page on long-term rentals in France contains a list of various properties available for rent. Some of these properties are labeled as \"cheap\" and are located in different regions of France, particularly in the South.\n\nHowever, the content does not explicitly indicate which of these properties have a pool, which was a specific requirement mentioned in the user's request. The listings include details such as property names, number of bedrooms, and general location, but without specific amenities like pools highlighted.\n\nGiven this observation, I realize I need to find additional information, either by checking the individual listings to see if they mention a pool or by searching for another source that focuses specifically on Airbnb rentals in France with pools. This will help me provide accurate and relevant information for the user's request. \n\nI'll take the next step to check if specific property details are listed that can help identify any available rentals with pools. ",
+    "metadata": {
+      "observation": "The content retrieved from the page on long-term rentals in France contains a list of various properties available for rent. Some of these properties are labeled as \"cheap\" and are located in different regions of France, particularly in the South.\n\nHowever, the content does not explicitly indicate which of these properties have a pool, which was a specific requirement mentioned in the user's request. The listings include details such as property names, number of bedrooms, and general location, but without specific amenities like pools highlighted.\n\nGiven this observation, I realize I need to find additional information, either by checking the individual listings to see if they mention a pool or by searching for another source that focuses specifically on Airbnb rentals in France with pools. This will help me provide accurate and relevant information for the user's request. \n\nI'll take the next step to check if specific property details are listed that can help identify any available rentals with pools. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:36.784865",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:36.785114",
+    "trace_type": "thought",
+    "message": "thought: My next thought is to gather more specific information about the individual rental properties mentioned on the site, focusing on whether they have pools. Since the content did not explicitly mention pools, I can either:\n\n1. Check each individual listing to see if they detail whether they have a pool or not, or\n2. Look for other resources that may specifically highlight Airbnbs in France that meet the criteria of being affordable and having a pool.\n\nSince checking each listing could be time-consuming and might not yield results quickly, I will opt for the second option and conduct a new search specifically targeting Airbnb properties in France with pools for monthly stays. This way, I can more efficiently find the information needed to answer the user's request. \n\nI will now proceed with this search.",
+    "metadata": {
+      "thought": "My next thought is to gather more specific information about the individual rental properties mentioned on the site, focusing on whether they have pools. Since the content did not explicitly mention pools, I can either:\n\n1. Check each individual listing to see if they detail whether they have a pool or not, or\n2. Look for other resources that may specifically highlight Airbnbs in France that meet the criteria of being affordable and having a pool.\n\nSince checking each listing could be time-consuming and might not yield results quickly, I will opt for the second option and conduct a new search specifically targeting Airbnb properties in France with pools for monthly stays. This way, I can more efficiently find the information needed to answer the user's request. \n\nI will now proceed with this search."
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:37.731066",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:37.731199",
+    "trace_type": "action",
+    "message": "action: search_internet",
+    "metadata": {
+      "action_name": "search_internet"
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:37.731297",
+    "trace_type": "tool_execution",
+    "message": "Executing action 'search_internet' with arguments: {'query': 'Airbnb rentals in France with pool for monthly stays affordable'}",
+    "metadata": {
+      "action_name": "search_internet",
+      "action_args": {
+        "query": "Airbnb rentals in France with pool for monthly stays affordable"
+      }
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:39.194999",
+    "trace_type": "tool_result",
+    "message": "Result of action 'search_internet': {'query': 'Airbnb rentals in France with pool for monthly stays affordable', 'follow_up_questions': None, 'answer': None, 'images': [], 'results': [{'url': 'https://www.airbnb.com/france/stays/pools', 'title': 'Vacation rentals with a pool in France - Airbnb', 'content': 'Top-rated rentals with a pool in France. Guests agree: these homes with a pool are highly rated for location, cleanliness, and more. 1 of 12 items showing.', 'score': 0.68420124, 'raw_content': None}, {'url': 'https://www.airbnb.com/saint-romain-de-popey-france/stays/monthly', 'title': 'Monthly Rentals in Saint-Romain-de-Popey - Airbnb', 'content': 'The cottage is beautiful, the pool area just for us was a real plus... We spent hours swimming, eating, small barbecue, awning to protect us from the sun (and', 'score': 0.6030211, 'raw_content': None}, {'url': 'https://www.airbnb.com/southern-france/stays/monthly', 'title': 'Southern France Furnished Monthly Rentals and Extended Stays', 'content': 'Airbnb has fully furnished apartment homes ideal for staffing, corporate housing, and relocation needs. Popular amenities for monthly rentals. Kitchen \u00b7 Wifi.', 'score': 0.5971152, 'raw_content': None}, {'url': 'https://www.airbnb.com/france/stays/monthly', 'title': 'France Furnished Monthly Rentals and Extended Stays - Airbnb', 'content': 'Aug 1, 2025 - Fully furnished rentals that include a kitchen and wifi, so you can settle in and live comfortably for a month or longer in France.', 'score': 0.5925965, 'raw_content': None}, {'url': 'https://www.airbnb.com/grand-aigueblanche-france/stays/monthly', 'title': 'Grand-Aigueblanche Furnished Monthly Rentals and Extended Stays', 'content': \"Fully furnished rentals include a kitchen and the amenities you need to live comfortably for a month or longer. It's the perfect alternative to a sublet.\", 'score': 0.2389322, 'raw_content': None}], 'response_time': 1.01}",
+    "metadata": {
+      "action_name": "search_internet",
+      "result": {
+        "query": "Airbnb rentals in France with pool for monthly stays affordable",
+        "follow_up_questions": null,
+        "answer": null,
+        "images": [],
+        "results": [
+          {
+            "url": "https://www.airbnb.com/france/stays/pools",
+            "title": "Vacation rentals with a pool in France - Airbnb",
+            "content": "Top-rated rentals with a pool in France. Guests agree: these homes with a pool are highly rated for location, cleanliness, and more. 1 of 12 items showing.",
+            "score": 0.68420124,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.airbnb.com/saint-romain-de-popey-france/stays/monthly",
+            "title": "Monthly Rentals in Saint-Romain-de-Popey - Airbnb",
+            "content": "The cottage is beautiful, the pool area just for us was a real plus... We spent hours swimming, eating, small barbecue, awning to protect us from the sun (and",
+            "score": 0.6030211,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.airbnb.com/southern-france/stays/monthly",
+            "title": "Southern France Furnished Monthly Rentals and Extended Stays",
+            "content": "Airbnb has fully furnished apartment homes ideal for staffing, corporate housing, and relocation needs. Popular amenities for monthly rentals. Kitchen \u00b7 Wifi.",
+            "score": 0.5971152,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.airbnb.com/france/stays/monthly",
+            "title": "France Furnished Monthly Rentals and Extended Stays - Airbnb",
+            "content": "Aug 1, 2025 - Fully furnished rentals that include a kitchen and wifi, so you can settle in and live comfortably for a month or longer in France.",
+            "score": 0.5925965,
+            "raw_content": null
+          },
+          {
+            "url": "https://www.airbnb.com/grand-aigueblanche-france/stays/monthly",
+            "title": "Grand-Aigueblanche Furnished Monthly Rentals and Extended Stays",
+            "content": "Fully furnished rentals include a kitchen and the amenities you need to live comfortably for a month or longer. It's the perfect alternative to a sublet.",
+            "score": 0.2389322,
+            "raw_content": null
+          }
+        ],
+        "response_time": 1.01
+      },
+      "result_length": 6
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:43.397397",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:43.397515",
+    "trace_type": "observation",
+    "message": "observation: The latest search results returned several Airbnb links related to properties in France that feature pools and options for monthly stays. Here are my observations:\n\n1. **Pool Properties**: The first result directly lists vacation rentals with pools in France on Airbnb. This would likely allow the user to find properties that meet their criteria for a pool.\n\n2. **Monthly Rentals**: Other links highlight specific regions or cities where monthly rentals are available on Airbnb, including Saint-Romain-de-Popey and Southern France. One entry mentions a cottage with a pool, indicating the type of amenity the user is looking for.\n\n3. **Variability in Listings**: The listings suggest that there are options for fully furnished and well-equipped properties suitable for longer stays, which aligns with the user's requirement for a monthly rental.\n\nOverall, I have enough information now to provide a condensed list of Airbnb bookings available in France with pools and options for monthly stays. I will summarize this information and present some links to directly relevant pages where the user can find more details. \n\nI will now proceed to construct a concise answer. ",
+    "metadata": {
+      "observation": "The latest search results returned several Airbnb links related to properties in France that feature pools and options for monthly stays. Here are my observations:\n\n1. **Pool Properties**: The first result directly lists vacation rentals with pools in France on Airbnb. This would likely allow the user to find properties that meet their criteria for a pool.\n\n2. **Monthly Rentals**: Other links highlight specific regions or cities where monthly rentals are available on Airbnb, including Saint-Romain-de-Popey and Southern France. One entry mentions a cottage with a pool, indicating the type of amenity the user is looking for.\n\n3. **Variability in Listings**: The listings suggest that there are options for fully furnished and well-equipped properties suitable for longer stays, which aligns with the user's requirement for a monthly rental.\n\nOverall, I have enough information now to provide a condensed list of Airbnb bookings available in France with pools and options for monthly stays. I will summarize this information and present some links to directly relevant pages where the user can find more details. \n\nI will now proceed to construct a concise answer. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:45.747755",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:45.747796",
+    "trace_type": "thought",
+    "message": "thought: My next thought is to summarize the results effectively, highlighting the key resources that the user can utilize to find affordable Airbnb rentals in France with pools for monthly stays. This includes directing them to specific Airbnb listings and emphasizing that they can filter searches based on their preferences for amenities like pools and the type of stay (monthly). \n\nI will include the links to the relevant sites that showcase properties and assist the user in exploring their options further, ensuring that they have a clear path to finding what they're looking for. \n\nLet me finalize this information in a clear and concise response. ",
+    "metadata": {
+      "thought": "My next thought is to summarize the results effectively, highlighting the key resources that the user can utilize to find affordable Airbnb rentals in France with pools for monthly stays. This includes directing them to specific Airbnb listings and emphasizing that they can filter searches based on their preferences for amenities like pools and the type of stay (monthly). \n\nI will include the links to the relevant sites that showcase properties and assist the user in exploring their options further, ensuring that they have a clear path to finding what they're looking for. \n\nLet me finalize this information in a clear and concise response. "
+    },
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:50.265022",
+    "trace_type": "separator",
+    "message": "--------------------------------",
+    "metadata": null,
+    "session_id": "basic_usage_demo"
+  },
+  {
+    "timestamp": "2025-08-02T16:17:50.265148",
+    "trace_type": "action",
+    "message": "action: final_answer",
+    "metadata": {
+      "action_name": "final_answer"
+    },
+    "session_id": "basic_usage_demo"
+  }
+]

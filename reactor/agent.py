@@ -3,6 +3,7 @@ import logging
 from openai import OpenAI
 
 from reactor.tools.tool import Tool, FinalAnswer
+from reactor.trace import SimpleTrace
 
 
 class Agent:
@@ -13,18 +14,32 @@ class Agent:
     interact with external tools and maintain conversation context.
     """
 
-    def __init__(self, prompt: str, tools: list[Tool] = None):
+    def __init__(self, prompt: str, tools: list[Tool] = None, trace_service: SimpleTrace = None, 
+                 model_name: str = "gpt-4o-mini", log_level: str = "WARNING"):
         """
         Initialize the Agent with a system prompt and optional tools.
 
         Args:
             prompt: The system prompt that defines the agent's behavior
             tools: Optional list of tools the agent can use
+            trace_service: Optional trace service for structured tracing
+            model_name: The LLM model to use (default: "gpt-4o-mini")
+            log_level: The logging level (default: "WARNING")
         """
-        logging.basicConfig(level=logging.INFO)
+        self.model_name = model_name
+        self.log_level = log_level
+        
+        # Configure logging to only show warnings and errors, not info/debug
+        logging.basicConfig(level=getattr(logging, self.log_level))
+        # Specifically silence httpx and openai logging
+        logging.getLogger("httpx").setLevel(logging.WARNING)
+        logging.getLogger("openai").setLevel(logging.WARNING)
+        
         self.logger = logging.getLogger(__name__)
+        self.trace_service = trace_service or SimpleTrace()
         self.tools = []
         self.client = OpenAI()
+        self.prompt = prompt
         if tools:
             self.tools = tools
             self.prompt = (
@@ -46,7 +61,11 @@ class Agent:
 
     def tools_match(self, tool_call: dict) -> bool:
         """Check if a tool call matches any available tools."""
-        return tool_call.function.name in [tool.names() for tool in self.tools]
+        # Flatten the list of tool names
+        all_tool_names = []
+        for tool in self.tools:
+            all_tool_names.extend(tool.names())
+        return tool_call.function.name in all_tool_names
 
     def llm_chat(self, user_input) -> str:
         """
@@ -58,10 +77,11 @@ class Agent:
         Returns:
             The final response from the LLM
         """
+        self.trace_service.trace_conversation_start(user_input)
         self.messages.append({"role": "user", "content": user_input})
         while True:
             response = self.client.chat.completions.create(
-                model="gpt-4o-mini",
+                model=self.model_name,
                 messages=self.messages,
                 tool_choice="auto",
                 tools=self.tools_definition(),
@@ -72,25 +92,14 @@ class Agent:
                 for tool_call in response.choices[0].message.tool_calls:
                     action_name = tool_call.function.name
                     action_args = json.loads(tool_call.function.arguments)
-                    self.logger.info(
-                        "Tool call detected with action name: "
-                        + action_name
-                        + " and arguments: "
-                        + str(action_args)
-                    )
+                    self.trace_service.trace_tool_call(action_name, action_args)
 
                     for tool in self.tools:
-                        self.logger.info(
-                            f"Checking if action '{action_name}' matches tool '{tool.names()}'"
-                        )
+                        self.trace_service.trace_tool_check(action_name, tool.names())
                         if action_name in tool.names():
-                            self.logger.info(
-                                f"Executing action '{action_name}' with arguments: {action_args}"
-                            )
+                            self.trace_service.trace_tool_execution(action_name, action_args)
                             result = getattr(tool, action_name)(**action_args)
-                            self.logger.info(
-                                f"Result of action '{action_name}': {result[:100]}"
-                            )
+                            self.trace_service.trace_tool_result(action_name, result)
                             self.messages.append(
                                 {
                                     "role": "tool",
@@ -99,9 +108,7 @@ class Agent:
                                 }
                             )
             else:
-                self.logger.info(
-                    "No tool call detected, appending response to messages"
-                )
+                self.trace_service.trace_no_tool_call()
                 self.messages.append(response.choices[0].message)
                 break
 
@@ -119,7 +126,7 @@ class Agent:
             The LLM's response
         """
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=self.model_name,
             messages=messages + [{"role": "user", "content": iterative_message}],
         )
         return response.choices[0].message.content
@@ -136,7 +143,7 @@ class Agent:
             Tuple of (response_message, tool_calls)
         """
         response = self.client.chat.completions.create(
-            model="gpt-4o-mini",
+            model=self.model_name,
             messages=messages + [{"role": "user", "content": iterative_message}],
             tools=self.tools_definition(),
         )
@@ -155,12 +162,17 @@ class Reactor(Agent):
     - Repeat until final answer is reached
     """
 
-    def __init__(self, tools: list[Tool] = None):
+    def __init__(self, tools: list[Tool] = None, trace_service: SimpleTrace = None, 
+                 model_name: str = "gpt-4o-mini", log_level: str = "WARNING", max_iterations: int = 10):
         """
         Initialize the Reactor agent with optional tools.
 
         Args:
             tools: Optional list of tools the agent can use
+            trace_service: Optional trace service for structured tracing
+            model_name: The LLM model to use (default: "gpt-4o-mini")
+            log_level: The logging level (default: "WARNING")
+            max_iterations: Maximum number of reasoning iterations (default: 10)
         """
         self.prompt = """
 You are an AI assistant uses the reason+act framework.
@@ -169,9 +181,11 @@ You are an AI assistant uses the reason+act framework.
 - **observation**: You read the result of that action
 - **thought**: You revise your reasoning based on the observation.
 """
+        self.max_iterations = max_iterations
         if not tools:
             tools = []
-        super().__init__(prompt=self.prompt, tools=tools + [FinalAnswer()])
+        super().__init__(prompt=self.prompt, tools=tools + [FinalAnswer()], trace_service=trace_service,
+                        model_name=model_name, log_level=log_level)
 
     def run_loop(self, question):
         """
@@ -184,7 +198,7 @@ You are an AI assistant uses the reason+act framework.
             Tuple of (final_answer, conversation_history)
         """
         counter = 0
-        while counter < 10:  # don't run more than 10 times
+        while counter < self.max_iterations:  # don't run more than max_iterations times
             if counter == 0:
                 user_message = (
                     f'Given this user question "{question}", what is your thought?'
@@ -196,8 +210,8 @@ You are an AI assistant uses the reason+act framework.
 
             thought = self.llm_complete(self.messages, user_message)
             self.messages.append({"role": "assistant", "content": thought})
-            self.logger.info("--------------------------------")
-            self.logger.info("thought: " + thought)
+            self.trace_service.trace_separator()
+            self.trace_service.trace_thought(thought)
 
             message, tool_calls = self.llm_complete_tool(
                 self.messages,
@@ -210,8 +224,8 @@ You are an AI assistant uses the reason+act framework.
                 action_name = tool_call.function.name
                 action_args = json.loads(tool_call.function.arguments)
 
-                self.logger.info("--------------------------------")
-                self.logger.info("action: " + action_name)
+                self.trace_service.trace_separator()
+                self.trace_service.trace_action(action_name)
 
                 if action_name == "final_answer":
                     self.messages.append(message)
@@ -220,13 +234,9 @@ You are an AI assistant uses the reason+act framework.
                 else:
                     for tool in self.tools:
                         if action_name in tool.names():
-                            self.logger.info(
-                                f"Executing action '{action_name}' with arguments: {action_args}"
-                            )
+                            self.trace_service.trace_tool_execution(action_name, action_args)
                             result = tool.run(action_name, **action_args)
-                            self.logger.info(
-                                f"Result of action '{action_name}': {result}"
-                            )
+                            self.trace_service.trace_tool_result(action_name, result)
                             self.messages.append(
                                 {
                                     "role": "tool",
@@ -240,7 +250,7 @@ You are an AI assistant uses the reason+act framework.
                 "Given the previous action results, what is your observation?",
             )
             self.messages.append({"role": "assistant", "content": observation})
-            self.logger.info("--------------------------------")
-            self.logger.info("observation: " + observation)
+            self.trace_service.trace_separator()
+            self.trace_service.trace_observation(observation)
 
             counter += 1

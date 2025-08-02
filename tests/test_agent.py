@@ -40,7 +40,8 @@ class TestAgent:
     def test_tools_match(self):
         """Test that tools_match works correctly."""
         mock_tool = Mock()
-        mock_tool.names.return_value = ["test_tool"]
+        # Use side_effect to ensure consistent return value
+        mock_tool.names.side_effect = lambda: ["test_tool"]
 
         agent = Agent("Test prompt", tools=[mock_tool])
 

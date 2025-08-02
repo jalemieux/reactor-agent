@@ -6,6 +6,7 @@ bs4==0.0.2
 build==1.2.2.post1
 certifi==2025.7.14
 charset-normalizer==3.4.2
+colorama==0.4.6
 distro==1.9.0
 flake8==7.3.0
 h11==0.16.0
