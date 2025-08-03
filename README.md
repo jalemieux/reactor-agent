@@ -1,9 +1,42 @@
 # Reactor Agent
 
-A ReAct (Reasoning + Acting) agent framework for AI-powered reasoning and tool execution.
+**EXPERIMENTAL CODE - NOT PRODUCTION READY**
+
+A ReAct (Reasoning + Acting) agent framework for AI-powered reasoning and tool execution. This is experimental research code implementing the ReAct framework described in "ReAct: Synergizing Reasoning and Acting in Language Models" (Yao et al., 2022).
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Experimental](https://img.shields.io/badge/Status-Experimental-orange.svg)](https://github.com/jalemieux/reactor-agent)
+
+## Important Notice
+
+This is **experimental research code** and is **NOT intended for production use**. The framework is provided as-is for research and educational purposes. Use at your own risk.
+
+## Research Background
+
+Reactor Agent implements the ReAct framework introduced in the paper:
+
+**"ReAct: Synergizing Reasoning and Acting in Language Models"** (Yao et al., 2022)
+- **Paper**: [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)
+- **Authors**: Shunyu Yao, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, Yuan Cao
+
+The ReAct framework synergizes reasoning and acting capabilities in language models, building upon earlier work on Chain-of-Thought prompting (Wei et al., 2022) and extending it to include tool use and interactive decision-making.
+
+### Related Research
+
+This implementation draws from several key papers in interactive language model research:
+
+1. **Chain-of-Thought Prompting** (Wei et al., 2022)
+   - [arXiv:2201.11903](https://arxiv.org/abs/2201.11903)
+   - Establishes the foundation for step-by-step reasoning in LLMs
+
+2. **ReAct Framework** (Yao et al., 2022)
+   - [arXiv:2210.03629](https://arxiv.org/abs/2210.03629)
+   - Combines reasoning with tool use and action planning
+
+3. **Interactive Language Models**
+   - Recent work on tool-using LLMs and interactive reasoning
+   - Survey: [Prompt4ReasoningPapers](https://github.com/zjunlp/Prompt4ReasoningPapers)
 
 ## Quick Start
 
@@ -25,80 +58,41 @@ export OPENAI_API_KEY="your-openai-api-key"
 export TAVILY_API_KEY="your-tavily-api-key"
 ```
 
-### 3. Basic Usage
+### 3. Examples
 
-```python
-from reactor import Reactor
-from reactor.tools.internet_tool import TavilyTool
+See the `examples/` directory for complete usage examples:
 
-# Create agent with internet search capability
-reactor = Reactor(tools=[TavilyTool()])
+- **`examples/basic_example.py`** - Basic usage without tools
+- **`examples/tool_example.py`** - Usage with tools
+- **`examples/tools/tavily_tool.py`** - Custom tool implementation
 
-# Ask a complex question
-response, messages = reactor.run_loop(
-    "What's the best time to visit Japan for cherry blossoms?"
-)
+Run an example:
 
-print(response['answer'])
-```
-
-### 4. With Tracing (Recommended)
-
-```python
-from reactor import Reactor, SimpleTrace
-from reactor.tools.internet_tool import TavilyTool
-
-# Enable tracing for debugging and analysis
-trace_service = SimpleTrace(session_id="my_session")
-reactor = Reactor(tools=[TavilyTool()], trace_service=trace_service)
-
-# Run the agent
-response, messages = reactor.run_loop(
-    "Find budget hotels in Paris near the Eiffel Tower"
-)
-
-# Get session summary
-summary = trace_service.get_session_summary()
-print(f"Generated {summary['total_traces']} traces")
-
-# Export for analysis
-trace_service.export_traces("session_traces.json")
-```
-
-### 5. Custom Configuration
-
-```python
-from reactor import Reactor, SimpleTrace
-from reactor.tools.internet_tool import TavilyTool
-
-# Configure agent with custom settings
-reactor = Reactor(
-    tools=[TavilyTool()],
-    model_name="gpt-4o",           # Use different model
-    log_level="DEBUG",              # Enable debug logging
-    max_iterations=15               # Allow more reasoning steps
-)
-
-response, messages = reactor.run_loop(
-    "What are the latest developments in quantum computing?"
-)
+```bash
+python examples/basic_example.py
 ```
 
 ## What This Does
 
 Reactor Agent implements the ReAct framework (Reasoning + Acting) that lets AI agents perform iterative reasoning cycles with tool integration. The agent can:
 
-- Think through problems step by step
-- Use tools to gather information or perform actions
-- Analyze results and refine its reasoning
-- Continue until it reaches a final answer
+- **Think through problems step by step** using Chain-of-Thought reasoning
+- **Use tools to gather information** or perform actions
+- **Analyze results and refine its reasoning** based on new information
+- **Continue iteratively** until it reaches a final answer
+
+This follows the ReAct paradigm where the agent alternates between:
+1. **Reasoning**: Generating thoughts and plans
+2. **Acting**: Using tools to gather information or perform actions
+3. **Observing**: Analyzing results and updating its understanding
 
 ## Key Features
 
-- **Iterative Reasoning**: Multi-step reasoning with tool integration
+- **Iterative Reasoning**: Multi-step reasoning with tool integration following ReAct principles
 - **Tool Support**: Easy integration with external tools (web search, APIs, etc.)
 - **Conversation Memory**: Maintains context across reasoning cycles
 - **Structured Tracing**: Comprehensive tracing system for debugging and analysis
+- **Research-Ready**: Designed for experimentation and analysis of reasoning patterns
 
 ## Installation
 
@@ -126,75 +120,6 @@ pip install -e .
 ```
 
 
-## Examples
-
-Check out the example files to see Reactor Agent in action:
-
-- **`examples/basic_usage.py`** - Simple usage without tools
-- **`examples/tracing_examples.py`** - Comprehensive tracing demonstrations
-- **`examples/logging_demo.py`** - Logging configuration examples
-
-Run an example:
-
-```bash
-python examples/basic_usage.py
-```
-
-## Configuration
-
-### API Keys
-
-Set your API keys as environment variables:
-
-```bash
-# Required: OpenAI API key
-export OPENAI_API_KEY="your-openai-api-key"
-
-# Optional: Tavily API key for internet search
-export TAVILY_API_KEY="your-tavily-api-key"
-```
-
-Or create a `.env` file:
-
-```bash
-echo "OPENAI_API_KEY=your-openai-api-key" > .env
-echo "TAVILY_API_KEY=your-tavily-api-key" >> .env
-```
-
-
-
-### Running Tests
-
-```bash
-# Run all tests
-pytest tests/ -v
-
-# Run specific test file
-pytest tests/test_agent.py -v
-
-# Run trace service tests
-pytest tests/test_trace.py -v
-
-# Run integration tests
-pytest tests/test_agent_trace_integration.py -v
-```
-
-
-
-### Building the Package
-
-```bash
-# Install build tools
-pip install build
-
-# Build distribution
-python -m build
-
-# This creates:
-# - dist/reactor_agent-0.1.0.tar.gz
-# - dist/reactor_agent-0.1.0-py3-none-any.whl
-```
-
 ## Contributing
 
 1. Fork the repository
@@ -209,9 +134,19 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- Based on the ReAct framework from "ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al.
-- Built with OpenAI's GPT models
-- Internet search powered by Tavily API
+- **ReAct Framework**: Based on "ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al. (2022)
+- **Chain-of-Thought**: Building on "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" by Wei et al. (2022)
+- **OpenAI GPT Models**: Powered by OpenAI's language models
+- **Tavily API**: Internet search capabilities provided by Tavily
 
+## References
 
-**Reactor Agent** - Empowering AI agents with reasoning and action capabilities.
+1. Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629*.
+
+2. Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., ... & Le, Q. V. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems*, 35, 24824-24837.
+
+3. For a comprehensive survey of reasoning in language models, see: [Prompt4ReasoningPapers](https://github.com/zjunlp/Prompt4ReasoningPapers)
+
+---
+
+**Reactor Agent** - Experimental implementation of the ReAct framework for AI reasoning and action research.

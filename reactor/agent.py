@@ -2,7 +2,7 @@ import json
 import logging
 from openai import OpenAI
 
-from reactor.tools.tool import Tool, FinalAnswer
+from reactor.tools.tool import CodeInterpreter, CurrentDate, Tool, FinalAnswer
 from reactor.trace import SimpleTrace
 
 
@@ -184,7 +184,7 @@ You are an AI assistant uses the reason+act framework.
         self.max_iterations = max_iterations
         if not tools:
             tools = []
-        super().__init__(prompt=self.prompt, tools=tools + [FinalAnswer()], trace_service=trace_service,
+        super().__init__(prompt=self.prompt, tools=tools + [FinalAnswer(), CurrentDate(), CodeInterpreter()], trace_service=trace_service,
                         model_name=model_name, log_level=log_level)
 
     def run_loop(self, question):

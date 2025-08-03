@@ -102,13 +102,30 @@ class TraceService(ABC):
     
     def trace_tool_result(self, action_name: str, result: str):
         """Trace tool execution result."""
-        # Truncate result for display if too long
-        display_result = result[:100] + "..." if len(result) > 100 else result
-        self._add_trace(
-            TraceType.TOOL_RESULT,
-            f"Result of action '{action_name}': {display_result}",
-            {"action_name": action_name, "result": result, "result_length": len(result)}
-        )
+        # Ensure result is a string and handle potential encoding issues
+        try:
+            if result is None:
+                result_str = "None"
+            elif isinstance(result, str):
+                result_str = result
+            else:
+                result_str = str(result)
+            
+            # Truncate result for display if too long
+            display_result = result_str[:100] + "..." if len(result_str) > 100 else result_str
+            self._add_trace(
+                TraceType.TOOL_RESULT,
+                f"Result of action '{action_name}': {display_result}",
+                {"action_name": action_name, "result": result_str, "result_length": len(result_str)}
+            )
+        except Exception as e:
+            # Fallback error handling
+            error_msg = f"Error processing tool result: {str(e)}"
+            self._add_trace(
+                TraceType.TOOL_RESULT,
+                f"Result of action '{action_name}': [Error processing result]",
+                {"action_name": action_name, "error": error_msg, "original_result_type": type(result).__name__}
+            )
     
     def trace_no_tool_call(self):
         """Trace when no tool call is detected."""

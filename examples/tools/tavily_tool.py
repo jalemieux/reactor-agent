@@ -6,7 +6,7 @@ import os
 from typing import List, Dict, Any
 from tavily import TavilyClient
 
-from .tool import Tool
+from reactor.tools.tool import Tool
 
 
 class TavilyTool(Tool):
@@ -25,7 +25,9 @@ class TavilyTool(Tool):
         if not self.api_key:
             raise ValueError("Tavily API key is required. Set TAVILY_API_KEY environment variable or pass api_key parameter.")
         
+
         self.client = TavilyClient(api_key=self.api_key)
+        
     
     def names(self) -> List[str]:
         return ["search_internet", "get_url_content"]
@@ -95,23 +97,33 @@ class TavilyTool(Tool):
             Search results as a formatted string
         """
         try:
+            # Validate inputs
+            if not query or not query.strip():
+                return "Error: Search query cannot be empty."
+            
+            # Make the API call
             response = self.client.search(
                 query=query,
                 search_depth=search_depth,
                 max_results=max_results
             )
+            print("****", response)
+            # Handle different response formats
+            if isinstance(response, dict):
+                results_data = response.get("results")
+            elif isinstance(response, list):
+                results_data = response
+            else:
+                raise ValueError(f"Unexpected response format from Tavily API: {str(response)[:200]}")
             
-            results = []
-            for result in response.get("results", []):
-                title = result.get("title", "No title")
-                url = result.get("url", "No URL")
-                content = result.get("content", "No content")
-                results.append(f"Title: {title}\nURL: {url}\nContent: {content}\n")
+            if not results_data:
+                raise "No search results found for the given query."
             
-            return "\n".join(results) if results else "No results found."
+            return results_data
             
         except Exception as e:
-            return f"Error performing search: {str(e)}"
+            error_msg = f"Error performing search: {str(e)}"
+            return error_msg
     
     def get_url_content(self, url: str) -> str:
         """
@@ -124,7 +136,41 @@ class TavilyTool(Tool):
             The content of the URL
         """
         try:
-            response = self.client.get_content(url)
-            return response.get("content", "No content available")
+            # Use the search method with a specific URL query
+            response = self.client.search(
+                query=f"site:{url}",
+                max_results=1,
+                search_depth="basic"
+            )
+            
+            # Check if response is None or empty
+            if not response:
+                return "No response received from Tavily API. Please check your API key and try again."
+            
+            # Handle different response formats
+            if isinstance(response, dict):
+                results_data = response.get("results")
+            elif isinstance(response, list):
+                results_data = response
+                
+            if not results_data:
+                return "No content available for this URL."
+            
+            # Get the first result
+            result = results_data[0] if results_data else None
+            if not result or not isinstance(result, dict):
+                return "No content available for this URL."
+            
+            return result
+            
         except Exception as e:
             return f"Error fetching URL content: {str(e)}" 
+        
+
+    def run(self, action_name, **action_args):
+        if action_name == "search_internet":
+            return self.search_internet(**action_args)
+        elif action_name == "get_url_content":
+            return self.get_url_content(**action_args)
+        else:
+            raise ValueError(f"Invalid action name: {action_name}")
