@@ -24,7 +24,7 @@ trace_service = SimpleTrace(session_id="basic_usage_demo", enable_console_output
 reactor = Reactor(trace_service=trace_service)
 
 # Ask a question that requires reasoning
-question = "Whats the factorial of 5 and how does it relate to the current date and time?"
+question = "What’s the current time, and how many seconds are left until midnight in my time zone?"
 
 print(f"Question: {question}")
 print("Running Reactor...")

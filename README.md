@@ -4,6 +4,8 @@
 
 A ReAct (Reasoning + Acting) agent framework for AI-powered reasoning and tool execution. This is experimental research code implementing the ReAct framework described in "ReAct: Synergizing Reasoning and Acting in Language Models" (Yao et al., 2022).
 
+📖 **Blog Post**: [An Iterative ReAct Agent: Exploring Step-by-Step Reasoning in Action](https://medium.com/@jalemieux/an-iterative-react-agent-exploring-step-by-step-reasoning-in-action-397129031581)
+
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Experimental](https://img.shields.io/badge/Status-Experimental-orange.svg)](https://github.com/jalemieux/reactor-agent)
@@ -54,9 +56,6 @@ pip install reactor-agent
 # Required: OpenAI API key
 export OPENAI_API_KEY="your-openai-api-key"
 
-# Optional: Tavily API key for internet search
-export TAVILY_API_KEY="your-tavily-api-key"
-```
 
 ### 3. Examples
 
@@ -64,7 +63,7 @@ See the `examples/` directory for complete usage examples:
 
 - **`examples/basic_example.py`** - Basic usage without tools
 - **`examples/tool_example.py`** - Usage with tools
-- **`examples/tools/tavily_tool.py`** - Custom tool implementation
+- **`examples/tools/tavily_tool.py`** - Custom tool implementation (requires Tavily API key)
 
 Run an example:
 
@@ -86,21 +85,9 @@ This follows the ReAct paradigm where the agent alternates between:
 2. **Acting**: Using tools to gather information or perform actions
 3. **Observing**: Analyzing results and updating its understanding
 
-## Key Features
-
-- **Iterative Reasoning**: Multi-step reasoning with tool integration following ReAct principles
-- **Tool Support**: Easy integration with external tools (web search, APIs, etc.)
-- **Conversation Memory**: Maintains context across reasoning cycles
-- **Structured Tracing**: Comprehensive tracing system for debugging and analysis
-- **Research-Ready**: Designed for experimentation and analysis of reasoning patterns
 
 ## Installation
 
-### From PyPI (Recommended)
-
-```bash
-pip install reactor-agent
-```
 
 ### From Source (Development)
 
@@ -132,20 +119,7 @@ pip install -e .
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## Acknowledgments
 
-- **ReAct Framework**: Based on "ReAct: Synergizing Reasoning and Acting in Language Models" by Yao et al. (2022)
-- **Chain-of-Thought**: Building on "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models" by Wei et al. (2022)
-- **OpenAI GPT Models**: Powered by OpenAI's language models
-- **Tavily API**: Internet search capabilities provided by Tavily
-
-## References
-
-1. Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K., & Cao, Y. (2022). ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629*.
-
-2. Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., ... & Le, Q. V. (2022). Chain-of-thought prompting elicits reasoning in large language models. *Advances in Neural Information Processing Systems*, 35, 24824-24837.
-
-3. For a comprehensive survey of reasoning in language models, see: [Prompt4ReasoningPapers](https://github.com/zjunlp/Prompt4ReasoningPapers)
 
 ---
 
